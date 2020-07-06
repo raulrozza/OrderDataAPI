@@ -1,0 +1,44 @@
+[
+    {
+        "status": "Delivered",
+        "ordered_on": "2020-06-01",
+        "shipped_on": "2020-06-02",
+        "total": 150,
+        "payment_info": "Waiting",
+        "payment_type": "Credit card",
+        "delivered_on": "2020-06-15",
+        "customer": {
+            "firstname": "Marcos",
+            "lastname": "Castro",
+            "email": "marcos@pokemon.com",
+            "newsletter_subscription": true,
+            "phone": "489302768384",
+            "company": "Konami",
+            "sex": 0,
+            "cpf": "80592207582",
+            "birthday": "1994-11-30"
+        },
+        "ship": {
+            "address1": "Avenida Getúlio Vargas",
+            "address2": "483",
+            "apartment_number": "48",
+            "district": "",
+            "city": "Araranguá",
+            "zip": "88006344",
+            "zone": "SC",
+            "country": "Brasil",
+            "location": {
+                "lat": -48.23205432,
+                "lng": -26.35250728
+            }
+        },
+        "contents": [
+            {
+                "name": "Macaco Dolly",
+                "price": 50,
+                "image": "https://linkdodolly.com/dolly",
+                "quantity": 3
+            }
+        ]
+    }
+]
