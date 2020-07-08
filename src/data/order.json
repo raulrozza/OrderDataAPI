@@ -3,6 +3,7 @@
         "status": "Delivered",
         "ordered_on": "2020-06-01",
         "shipped_on": "2020-06-02",
+        "number": 1,
         "total": 150,
         "payment_info": "Waiting",
         "payment_type": "Credit card",

@@ -25,12 +25,9 @@ const server = express();
 mongoose
     .connect(MONGO_URL, {
         useUnifiedTopology: true,
-
         useNewUrlParser: true,
-
         useFindAndModify: false,
     })
-
     .catch(error => console.error('MongoDB error:', error));
 
 const connection = mongoose.connection;
@@ -43,12 +40,9 @@ connection.on('disconnect', () => {
     mongoose
         .connect(MONGO_URL, {
             useUnifiedTopology: true,
-
             useNewUrlParser: true,
-
             useFindAndModify: false,
         })
-
         .catch(error => console.error('MongoDB error:', error));
 });
 

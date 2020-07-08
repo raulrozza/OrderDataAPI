@@ -149,7 +149,7 @@ module.exports = {
         let { id, map } = req.query;
 
         try {
-            const result = await Order.findOne({ id }).catch(error => {
+            const result = await Order.findById(id).catch(error => {
                 throw error;
             });
 

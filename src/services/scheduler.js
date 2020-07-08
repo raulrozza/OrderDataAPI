@@ -1,7 +1,7 @@
 const cron = require('node-cron');
 
 // Services
-const getOrdersFromXTech = require('./getOrdersFromXTech');
+const getOrders = require('./getOrders');
 
 //models
 const Order = require('../models/Order');
@@ -15,13 +15,13 @@ const getDate = () => {
 // Scheduled method to fill the database
 module.exports = () => {
     cron.schedule(
-        '00 * * * *',
+        '14 * * * *',
         async () => {
             console.log(`${getDate()} Starting daily update...`);
 
-            const orders = await getOrdersFromXTech();
+            const orders = await getOrders();
             orders.forEach(async order => {
-                await Order.findOneAndUpdate({ id: order.id }, order, {
+                await Order.findOneAndUpdate({ number: order.number }, order, {
                     upsert: true,
                 }).catch(error => console.error(error));
             });

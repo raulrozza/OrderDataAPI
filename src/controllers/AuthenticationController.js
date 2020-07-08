@@ -55,7 +55,7 @@ module.exports = {
                         },
                         {
                             $set: {
-                                token: token,
+                                token,
                             },
                         },
                     ).catch(error => {
@@ -64,7 +64,7 @@ module.exports = {
 
                     user.token = token;
 
-                    return res.json(user);
+                    return res.json({ user, token: user.token });
                 } else
                     return res
                         .status(400)

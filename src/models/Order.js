@@ -9,6 +9,7 @@ const OrderSchema = new Schema(
         ordered_on: Date,
         shipped_on: String,
         total: Number,
+        number: Number,
         payment_info: String,
         payment_type: String,
         delivered_on: String,
