@@ -1,12 +1,12 @@
-const express = require('express');
-const verifyToken = require('./verifyToken.js');
+import express from 'express';
+import verifyToken from './verifyToken';
 
 // Controllers
-const AuthenticationController = require('./controllers/AuthenticationController');
-const LastOrdersController = require('./controllers/LastOrdersController');
-const MonthlyProfitController = require('./controllers/MonthlyProfitController');
-const OrderController = require('./controllers/OrderController');
-const UserController = require('./controllers/UserController');
+import AuthenticationController from './controllers/AuthenticationController';
+import LastOrdersController from './controllers/LastOrdersController';
+import MonthlyProfitController from './controllers/MonthlyProfitController';
+import OrderController from './controllers/OrderController';
+import UserController from './controllers/UserController';
 
 const routes = express.Router();
 
@@ -25,4 +25,4 @@ routes.put('/user', verifyToken, UserController.update);
 routes.get('/lastOrders', verifyToken, LastOrdersController.index);
 routes.get('/monthlyProfit', verifyToken, MonthlyProfitController.index);
 
-module.exports = routes;
+export default routes;

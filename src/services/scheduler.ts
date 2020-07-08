@@ -1,10 +1,10 @@
-const cron = require('node-cron');
+import cron from 'node-cron';
 
 // Services
-const getOrders = require('./getOrders');
+import getOrders from './getOrders';
 
-//models
-const Order = require('../models/Order');
+// models
+import Order from '../models/Order';
 
 const getDate = () => {
     const date = new Date();
@@ -13,9 +13,9 @@ const getDate = () => {
 };
 
 // Scheduled method to fill the database
-module.exports = () => {
+const scheduler = () => {
     cron.schedule(
-        '14 * * * *',
+        '38 * * * *',
         async () => {
             console.log(`${getDate()} Starting daily update...`);
 
@@ -33,3 +33,5 @@ module.exports = () => {
         },
     );
 };
+
+export default scheduler;

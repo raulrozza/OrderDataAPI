@@ -1,4 +1,4 @@
-const { Schema } = require('mongoose');
+import { Schema } from 'mongoose';
 
 const LocationSchema = new Schema(
     {
@@ -10,4 +10,4 @@ const LocationSchema = new Schema(
     },
 );
 
-module.exports = LocationSchema;
+export default LocationSchema;

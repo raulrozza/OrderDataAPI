@@ -1,29 +1,22 @@
-const express = require('express');
-
-const mongoose = require('mongoose');
-
-const cors = require('cors');
+import express from 'express';
+import mongoose from 'mongoose';
+import cors, { CorsOptionsDelegate } from 'cors';
 
 // Services
-
-const scheduler = require('./services/scheduler');
+import scheduler from './services/scheduler';
 
 // Server's functions
-
-const routes = require('./routes.js');
+import routes from './routes';
 
 // Environment variables
-
-const { port, MONGO_URL, CORS_CONFIG } = require('../config');
+import { port, MONGO_URL, CORS_CONFIG } from '../config';
 
 // Initial server configuration
-
 const server = express();
 
 // Try to connect with mongo and set up the server.
-
 mongoose
-    .connect(MONGO_URL, {
+    .connect(MONGO_URL || '', {
         useUnifiedTopology: true,
         useNewUrlParser: true,
         useFindAndModify: false,
@@ -38,7 +31,7 @@ connection.on('error', () => {
 
 connection.on('disconnect', () => {
     mongoose
-        .connect(MONGO_URL, {
+        .connect(MONGO_URL || '', {
             useUnifiedTopology: true,
             useNewUrlParser: true,
             useFindAndModify: false,
@@ -49,10 +42,13 @@ connection.on('disconnect', () => {
 if (CORS_CONFIG) {
     const whitelist = [CORS_CONFIG];
 
-    const corsOptionsDelegate = (req, callback) => {
+    const corsOptionsDelegate: CorsOptionsDelegate = (req, callback) => {
         let corsOptions;
 
-        if (whitelist.indexOf(req.header('Origin')) !== -1)
+        if (
+            req.header('Origin') &&
+            whitelist.indexOf(req.header('Origin') || '') !== -1
+        )
             corsOptions = { origin: true };
         // reflect (enable) the requested origin in the CORS response
         else corsOptions = { origin: false }; // disable CORS for this request
