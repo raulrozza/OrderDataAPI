@@ -2,11 +2,11 @@ import express from 'express';
 import verifyToken from './verifyToken';
 
 // Controllers
-import AuthenticationController from './controllers/AuthenticationController';
-import LastOrdersController from './controllers/LastOrdersController';
-import MonthlyProfitController from './controllers/MonthlyProfitController';
-import OrderController from './controllers/OrderController';
-import UserController from './controllers/UserController';
+import * as AuthenticationController from './controllers/AuthenticationController';
+import * as LastOrdersController from './controllers/LastOrdersController';
+import * as MonthlyProfitController from './controllers/MonthlyProfitController';
+import * as OrderController from './controllers/OrderController';
+import * as UserController from './controllers/UserController';
 
 const routes = express.Router();
 

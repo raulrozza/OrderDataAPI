@@ -39,13 +39,9 @@
     "typescript": "^3.9.6"
   },
   "scripts": {
-    "server": "ts-node-dev --respawn --transpileOnly --ignore-watch node_modules --no-notify src/server.ts",
+    "server": "tsnd --respawn --transpile-only --ignore-watch node_modules --no-notify src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/server.js"
-  },
-  "engines": {
-    "node": ">=12.14.0",
-    "npm": ">=6.13.4"
+    "start": "node dist/src/server.js"
   },
   "author": "Raul Rosá",
   "license": "ISC"
