@@ -2,7 +2,7 @@
 
 Estes scripts tem como principal função atualizar o banco de dados da aplicação periodicamente, com os dados recebidos pela plataforma de e-commerce. Se por acaso, o cliente mudar de plataforma, você deve criar um novo script de getCustomers/Orders/Products para buscar as informações da nova API, e associá-lo ao scheduler.
 
-## Scheduler.js
+## Scheduler.ts
 
 Este script utiliza a biblioteca **Cron** para disparar requisições periódicas para as APIs, atualizando o banco de dados periodicamente.
 

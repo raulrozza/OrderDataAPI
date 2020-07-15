@@ -4,13 +4,13 @@ Os arquivos da API são distribuídos nas seguintes pastas:
 
 - *Controllers:* A pasta que contém os controladores da aplicação. Estes são responsáveis por processar as requisições dos usuários, e fazer a ligação entre o que o usuário precisa e o que o banco de dados pode fornecer. De maneira geral, os controladores definem as regras de negócio da aplicação.
 - *Models:* Contém os esquemas das entidades do banco de dados. Informações dos campos das entidades, quais são necessários, como eles são processados e etc estão definidos ali.
-- *Services:* Esta pasta contém scripts responsáveis por preencher o banco de dados. Seu principal script atualmente é o atualizador de dados da base, **scheduler.js**.
+- *Services:* Esta pasta contém scripts responsáveis por preencher o banco de dados. Seu principal script atualmente é o atualizador de dados da base, **scheduler.jt**.
 
 # Scripts
 
 Uma breve explicação dos scripts nesta pasta.
 
-## Server.js
+## Server.ts
 
 Este é o arquivo principal da aplicação e ponto de entrada do servidor. Ele é responsável por centralizar os demais scripts e configurar especificações da API.
 
@@ -24,7 +24,7 @@ Então, a aplicação configura seu *middlware* para entender requisições com 
 
 Por fim, a aplicação executa a função **Scheduler**, que atualizará periodicamente o banco de dados, e começa a ouvir na porta definida pelo ambiente.
 
-## Routes.js
+## Routes.ts
 
 Este script define o comportamento das rotas da aplicação. Ele faz uso dos controladores, definidos na pasta *controllers*.
 
@@ -87,6 +87,6 @@ Endpoint para envio de email.
 
 - **sendEmail**, POST: Recebe os dados que serão enviados para um e-mail informado.
 
-## VerifyToken.js
+## VerifyToken.ts
 
 Este script é um *middleware* que checa a autenticidade de um usuário. Ele verifica a existência do HEADER de autenticação, e valida o token recebido. Caso alguma informação não bata, retorna um erro de 403, acesso proibido.
