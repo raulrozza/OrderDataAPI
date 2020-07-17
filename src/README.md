@@ -41,14 +41,6 @@ Rotas para autenticar um usuário.
 - **login**, POST: Esta rota realiza o login do usuário, através do controlador de Autenticação.
 - **auth/:id**, GET: Esta rota verifica se o usuário com o id informado está autenticado na aplicação.
 
-#### Customers
-
-Rotas de visualização dos clientes.
-
-- **customers?:page**, GET: Esta rota lista todos os clientes, mas limita a quantidade de retornos possíveis. Para navegar por todos os clientes, o endpoint informa a quantidade total de clientes existentes, e recebe como parâmetro um valor de paginação.
-- **customer?:id**, GET: Retorna todas as informações de um único cliente.
-- **customer/products?:id**, GET: Retorna informações dos produtos comprados pelo cliente com determinado id.
-
 #### Orders
 
 Rotas de visualização de pedidos.
@@ -56,36 +48,19 @@ Rotas de visualização de pedidos.
 - **orders?:page**, GET: Esta rota lista todos os pedidos, mas limita a quantidade de retornos possíveis. Para navegar por todos os pedidos, o endpoint informa a quantidade total de pedidos existentes, e recebe como parâmetro um valor de paginação.
 - **order?:id**, GET: Retorna todas as informações de um único pedido.
 
-#### Products
-
-Rotas de visualização dos produtos.
-
-- **products?:page**, GET: Esta rota lista todos os produtos, mas limita a quantidade de retornos possíveis. Para navegar por todos os produtos, o endpoint informa a quantidade total de produtos existentes, e recebe como parâmetro um valor de paginação.
-- **product?:id**, GET: Retorna todas as informações de um único produto.
-- **product/customers?:id**, GET: Retorna informações de quais clientes já compraram um produto determinado.
-
 #### User
 
 Rotas de manipulação de usuários.
 
 - **user**, POST: Cria um novo usuário na aplicação.
 - **user**, PUT: Atualiza as informações pessoais de um determinado usuário na aplicação.
-- **notifications**, PUT: Atualiza as configurações de recebimento de notificação do usuário.
 
 #### Reports
 
 Rotas de visualização de relatórios
 
-- **missingProducts**, GET: Retorna informações que mostram quais os produtos com menor quantidade em estoque.
 - **lastOrders**, GET: Retorna quais foram os últimos pedidos recebidos.
 - **monthlyProfit**, GET: Retorna informações de faturamento dos últimos 12 meses.
-- **lastSold**, GET: Mostra quais foram os últimos produtos vendidos.
-
-#### Notification
-
-Endpoint para envio de email.
-
-- **sendEmail**, POST: Recebe os dados que serão enviados para um e-mail informado.
 
 ## VerifyToken.ts
 
