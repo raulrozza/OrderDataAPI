@@ -2,6 +2,8 @@
 
 Esta API fornece dados sobre pedidos, atualiza estes dados periodicamente e também utiliza geolocalização.
 
+Ela pode ser acessada através da url: https://cron-geocoder-api.herokuapp.com/
+
 ## Objetivo
 
 A API serve para servir a um sistema os dados referentes a produtos de uma loja, eventualmente servindo também alguns dados pré-computados para a mostra de relatórios.
